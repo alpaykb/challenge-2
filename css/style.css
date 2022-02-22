@@ -1,0 +1,270 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #777;
+}
+
+.home_text {
+    color: #fff;
+    font-family: 'Tomorrow', sans-serif;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+}
+a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+a:hover{
+     color: #005188; 
+}
+
+a.active {
+    color: #005188 !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+nav {
+    font-family: 'Tomorrow', sans-serif;
+    width: 200px;
+    background: black;
+}
+
+nav header {
+    position: relative;
+    height: 80px;
+    padding: 20px 0 0 15px;
+    font-size: 16px;
+    color: #fff;
+}
+
+nav header img {
+    height: 50px;
+}
+
+.logo {
+    height: 51px;
+    float: left;
+}
+
+nav ul a {
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    display: block;
+    color: #fff;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    color: #005188;
+}
+
+main {
+    flex: 1;
+    padding: 25px;
+    background: #2c3e50;
+}
+
+main h1 {
+    font-family: 'Tomorrow', sans-serif;
+    height: 80px;
+    margin: -25px -25px 25px -25px;
+    padding: 0 25px;
+    line-height: 76px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #005188;
+}
+.menu_title{
+    color: #fff;
+}
+.page_title_fullscreen {
+    background: #fff;
+    text-transform: uppercase;
+}
+
+.page_title {
+    font-size: 10px;
+    margin-left: 47%;
+    font-family: 'Tomorrow', sans-serif;
+    text-transform: uppercase;
+    color: #005188;
+}
+
+.flex-grid {
+    display: flex;
+}
+
+.flex-grid > div {
+    flex: 1;
+    margin: 0 20px 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.flex-grid > div:last-child {
+    margin-right: 0;
+}
+
+.flex-grid h2 {
+    margin: -15px -15px 15px -15px;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+}
+
+.flex-grid li {
+    margin: 0 0 10px;
+    padding: 0 0 0 25px;
+}
+
+.header_mobile {
+    height: 40px;
+    background: #000;
+    color: #fff;
+    display: none;
+}
+
+#brandstof,
+#snelheid,
+#acceleratie,
+#g-force,
+#zwaartekracht,
+#afstand,
+#atmosfeer{
+    width: 100% !important;
+}
+
+.topnav {
+    display: none;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    clear: left;
+    background: #fff;
+    color: #333;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.topnav a.icon {
+    background: #fff;
+    color: #000;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 14px;
+}
+
+.topnav a:hover {
+    color: #005188;
+}
+
+
+
+/*  
+** Media Queries
+***********************************************************/
+@media (max-width: 1000px) {
+
+    .flex-grid {
+        flex-direction: column;
+    }
+
+    .flex-grid > div {
+        margin-top: 45px;
+        margin-right: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .topnav {
+        display: block;
+    }
+
+    .page_title_fullscreen {
+        display: none;
+    }
+
+    #canvas {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+    }
+
+    .bg {
+        height: 100%
+    }
+
+@media (max-width: 800px) {
+
+    .flex-grid {
+        flex-direction: column;
+    }
+
+    .flex-grid > div {
+        margin-top: 45px;
+        margin-right: 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .topnav {
+        display: block;
+    }
+
+    .page_title_fullscreen {
+        display: none;
+    }
+
+    #canvas {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+    }
+
+    .bg {
+        height: 100%
+    }
+
+    @media (max-width: 500px) {
+        .page_title {
+            display: none;
+        }
+        
+        .logo {
+            margin-left: 30%;
+        })
+    }

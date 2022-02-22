@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpaceX</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav>
+
+            <header>
+                <a href="index.html"><img src="img/logo.png"></a>
+            </header>
+
+            <ul>
+                <li><span>ITSI</span></li>
+                <li><a href="info.html">Voertuig informatie</a></li>
+                <li><a href="omgeving.html" class="active">Voertuig omgeving</a></li>
+                <li><a href="voorraden.html">Voorraden</a></li>
+            </ul>
+
+        </nav>
+        <div class="topnav">
+            <a href="index.html"><img class="logo" src="img/logo.png"></a>
+            <p class="page_title">Voertuig omgeving<p>
+                    <div id="myLinks">
+                        <a href="index.html">Home</a>
+                        <a href="info.html">Voertuig informatie</a>
+                        <a href="omgeving.html" class="active">Voertuig omgeving</a>
+                        <a href="voorraden.html">Voorraden</a>
+                    </div>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+        </div>
+        <main>
+
+            <h1 class="page_title_fullscreen">Voertuig omgeving</h1>
+
+
+            <div class="flex-grid">
+                <div>
+
+                    <h2>Zwaartekracht</h2>
+                    <canvas id="zwaartekracht"></canvas>
+                    <script>
+                        new Chart(document.getElementById("zwaartekracht"), {
+                            type: 'line',
+                            data: {
+                                labels: [0, 50, 100, 150, 200, 250, 300, 350, 400, 450],
+                                label: "Afstand (km)",
+                                datasets: [{
+                                    data: [10000, 9800, 7500, 5200, 2000, 1100, 1088, 920, 783, 430],
+                                    label: "Zwaartekracht (kg)",
+                                    borderColor: "rgb(0,0,255,0.3)",
+                                    fill: false
+                                }]
+                            },
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+                <div>
+                    <h2>Afstand afgelegd over tijd</h2>
+                    <canvas id="snelheid"></canvas>
+                    <script>
+                        var ctx = document.getElementById('snelheid').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'polarArea',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['km/u'],
+                                datasets: [{
+                                    label: 'km/u',
+                                    backgroundColor: 'rgb(0,0,255,0.3)',
+                                    data: [1200]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+                <div>
+                    <h2>Atmosfeer</h2>
+                    <canvas id="voorraad"></canvas>
+                    <script>
+                        new Chart(document.getElementById("voorraad"), {
+                            type: 'doughnut',
+                            data: {
+                                labels: ["Stikstof", "Zuurstof", "Argon", "Koolstofdioxide", "Waterstof"],
+                                datasets: [{
+                                    label: "",
+                                    backgroundColor: ["rgb(0,0,255,0.3)", "rgb(0,255,0,0.3)", "rgb(255,0,0,0.3)", "rgb(0,255,255,0.3)", "rgb(255,0,255,0.3)"],
+                                    data: [100, 30, 20, 10, 60]
+                                }]
+                            },
+                            options: {}
+                        });
+
+                    </script>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

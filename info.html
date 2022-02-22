@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpaceX</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav>
+
+            <header>
+                <a href="index.html"><img src="img/logo.png"></a>
+            </header>
+
+            <ul>
+                <li><span>ITSI</span></li>
+                <li><a href="info.html" class="active">Voertuig informatie</a></li>
+                <li><a href="omgeving.html">Voertuig omgeving</a></li>
+                <li><a href="voorraden.html">Voorraden</a></li>
+            </ul>
+
+        </nav>
+        <div class="topnav">
+            <a href="index.html"><img class="logo" src="img/logo.png"></a>
+            <p class="page_title">Voertuig informatie<p>
+                    <div id="myLinks">
+                        <a href="index.html">Home</a>
+                        <a href="info.html" class="active">Voertuig informatie</a>
+                        <a href="omgeving.html">Voertuig omgeving</a>
+                        <a href="voorraden.html">Voorraden</a>
+                    </div>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+        </div>
+        <main>
+
+            <h1 class="page_title_fullscreen">Voertuig informatie</h1>
+
+
+            <div class="flex-grid">
+                <div>
+
+                    <h2>Brandstof</h2>
+                    <canvas id="brandstof"></canvas>
+                    <script>
+                        var ctx = document.getElementById('brandstof').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'bar',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['Brandstof'],
+                                datasets: [{
+                                    label: 'Liter',
+                                    backgroundColor: 'rgb(0,0,255,0.3)',
+                                    data: [300]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+                <div>
+
+                    <h2>Snelheid</h2>
+                    <canvas id="snelheid"></canvas>
+                    <script>
+                        var ctx = document.getElementById('snelheid').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'polarArea',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['km/u'],
+                                datasets: [{
+                                    label: 'km/u',
+                                    backgroundColor: 'rgb(0,0,255,0.3)',
+                                    data: [1200]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+            </div>
+
+            <div class="flex-grid">
+                <div>
+                    <h2>Acceleratie</h2>
+                    <canvas id="acceleratie"></canvas>
+                    <script>
+                        var ctx = document.getElementById('acceleratie').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'polarArea',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ['rpm x 1000'],
+                                datasets: [{
+                                    label: 'rpm x 1000',
+                                    backgroundColor: 'rgb(0,0,255,0.3)',
+                                    data: [73]
+                                }]
+                            },
+
+                            // Configuration options go here
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+                <div>
+                    <h2>G-force</h2>
+                    <canvas id="g-force"></canvas>
+                    <script>
+                        new Chart(document.getElementById("g-force"), {
+                            type: 'radar',
+                            data: {
+                                labels: ["Front", "Right", "Back", "Left"],
+                                datasets: [{
+                                    label: "G-force",
+                                    fill: true,
+                                    backgroundColor: "rgb(0,0,255,0.3)",
+                                    pointBorderColor: "rgb(0,0,255,0.3)",
+                                    pointBackgroundColor: "rgb(0,0,255,0.3)",
+                                    data: [43, 78, 186, 31]
+                                }]
+                            },
+                            options: {}
+                        });
+
+                    </script>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
